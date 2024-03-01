@@ -7,17 +7,14 @@ import java.util.Properties;
 public class Readconfig {
 	
 	Properties pro;
-	
-	public Readconfig() {
-		
+	public Readconfig() {		
 		File src=new File("./configuration/Config.properties");
 		try {
 			FileInputStream fis=new FileInputStream(src);
 			pro=new Properties();
 			pro.load(fis);
 		}catch(Exception e) {
-			System.out.println("The Exception is "+ e.getMessage());
-			
+			System.out.println("The Exception is "+ e.getMessage());	
 		}
 	}
 	

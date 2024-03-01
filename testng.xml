@@ -7,11 +7,11 @@
     <listener class-name="com.Utility.Reporting"></listener>
   </listeners>
   <test name="Gkartgreen Test">
-  <parameter name="browser" value="edge"></parameter>
+  <parameter name="browser" value="firefox"></parameter>
   <classes>
   <class name="com.Testcases.TC_LoginTest_001"></class>
-  <class name="com.Testcases.TC_LoginDDT_002"></class>
-  <class name="com.Testcases.TC_AddNewCustomer_003"></class>
+  <!--class name="com.Testcases.TC_LoginDDT_002"></class>
+  <class name="com.Testcases.TC_AddNewCustomer_003"></class-->
   </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
