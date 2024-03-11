@@ -12,7 +12,7 @@ import com.Pageobjects.Loginpage;
 public class TC_AddNewCustomer_003 extends Base {
 	
 	@Test
-	public void addnewcustomer() throws InterruptedException, IOException {
+	public void addnewcustomer() throws  IOException {
 		Loginpage lp=new Loginpage(driver);
 		lp.setusername(username);
 		lp.setpassword(password);
@@ -20,7 +20,7 @@ public class TC_AddNewCustomer_003 extends Base {
 		
 		logger.info("login completed");
 		
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		
 		AddNewCustomer addcust=new AddNewCustomer(driver);
 		addcust.clickAddcustomer();
@@ -38,7 +38,7 @@ public class TC_AddNewCustomer_003 extends Base {
 		addcust.custpassword("abcd@123");
 		addcust.submit();
 		
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		
 		boolean result=driver.getPageSource().contains("Customer Registered Successfully!!!");
 		

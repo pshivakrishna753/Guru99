@@ -18,6 +18,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import com.Utility.Readconfig;
@@ -31,7 +32,6 @@ public class Base {
 	public String password=readconfig.getPassword();
 	public static WebDriver driver;
 	public static Logger logger;
-	
 	
 	@Parameters("browser")
 	@BeforeClass

@@ -5,22 +5,8 @@
     <listener class-name="com.Utility.Reporting"/>
   </listeners>
   <test thread-count="5" name="Gkartgreen Test(failed)">
-    <parameter name="browser" value="edge"/>
+    <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.Testcases.TC_LoginDDT_002">
-        <methods>
-          <include name="Setup"/>
-          <include name="TearDown"/>
-          <include name="loginDDT"/>
-        </methods>
-      </class> <!-- com.Testcases.TC_LoginDDT_002 -->
-      <class name="com.Testcases.TC_LoginTest_001">
-        <methods>
-          <include name="logintest"/>
-          <include name="Setup"/>
-          <include name="TearDown"/>
-        </methods>
-      </class> <!-- com.Testcases.TC_LoginTest_001 -->
       <class name="com.Testcases.TC_AddNewCustomer_003">
         <methods>
           <include name="Setup"/>

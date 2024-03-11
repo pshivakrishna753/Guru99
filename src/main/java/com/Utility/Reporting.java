@@ -27,14 +27,14 @@ public class Reporting extends TestListenerAdapter{
 	public ExtentReports extent;
 	public ExtentTest logger;
 
-	public void onstart(ITestContext testContext)
+	public void onStart(ITestContext testContext)
 
 	{
 
 	String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 	String repNane="Test-Report-"+timestamp+".html";
-	htmlreporter=new ExtentHtmlReporter(System.getProperty("user.dir")+"/reports/"+repNane);
-	htmlreporter.loadXMLConfig(System.getProperty("user.dir") + "/extent-config.xml");
+	htmlreporter=new ExtentHtmlReporter("C:\\Users\\shiva\\eclipse-workspace\\SeleniumPOMGkartgreen"+"/reports/"+repNane);
+	htmlreporter.loadXMLConfig("C:\\Users\\shiva\\eclipse-workspace\\SeleniumPOMGkartgreen" + "/extent-config.xml");
 
 	 
 
@@ -53,6 +53,7 @@ public class Reporting extends TestListenerAdapter{
 	htmlreporter.config().setTheme(Theme.DARK);
 	}
 
+	@Override
 	public void onTestSuccess(ITestResult tr)
 	{
 
@@ -68,7 +69,7 @@ public class Reporting extends TestListenerAdapter{
 	logger.log(Status.FAIL,MarkupHelper.createLabel(tr.getName(),ExtentColor.RED)); // send the passed information |
 
 	 
-	String screenshotPath = System.getProperty("user.dir")+"\\Screenshots\\"+tr.getName()+".png";
+	String screenshotPath = "C:\\Users\\shiva\\eclipse-workspace\\SeleniumPOMGkartgreen\\Screenshots\\"+tr.getName()+".png";
 
 	File f = new File(screenshotPath);
 	
@@ -89,13 +90,14 @@ public class Reporting extends TestListenerAdapter{
 	}
 
 
-	public void ontestskipped(ITestResult tr)
+	public void onTestSkipped(ITestResult tr)
 
 	{
 	logger=extent .createTest(tr.getName()); // create new entry in the report
 	logger.log(Status.SKIP,MarkupHelper.createLabel (tr.getName(),ExtentColor.ORANGE) );
 
 	}
+	@Override
 	public void onTestFailure(ITestResult tr)
 	{
 	logger=extent .createTest(tr.getName()); // create new entry in the report
@@ -103,7 +105,7 @@ public class Reporting extends TestListenerAdapter{
 
 	   
 
-	String screenshotPath=System.getProperty("user.dir")+ "\\Screenshots\\" + tr.getName()+ ".png";
+	String screenshotPath="C:\\Users\\shiva\\eclipse-workspace\\SeleniumPOMGkartgreen"+ "\\Screenshots\\" + tr.getName()+ ".png";
 	File f = new File(screenshotPath);
 	if (f.exists())
 	{
